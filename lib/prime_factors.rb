@@ -4,13 +4,11 @@ class PrimeFactors
         if integer == 1
             result << 1
         end
-        while integer % 2 == 0 
-            result << 2
-            integer /= 2
-        end
-        if integer % 3 == 0
-            result << 3
-            integer /= 3
+        for n in 2..3
+            while integer % n == 0 
+                result << n
+                integer /= n
+            end
         end
         result
     end
