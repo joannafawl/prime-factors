@@ -3,7 +3,7 @@ require_relative '../lib/prime_factors'
 RSpec.describe PrimeFactors do
     context "given an integer" do
         it "returns an integer" do
-            expect(PrimeFactors.new.calculate_factors(1)).to eq([1])
+            expect(PrimeFactors.new.calculate_factors(1)).to eq([])
         end
     end
 
@@ -52,6 +52,12 @@ RSpec.describe PrimeFactors do
     context "given an integer that is not square-free" do
         it "returns an array" do
             expect(PrimeFactors.new.calculate_factors(60)).to eq([2, 2, 3, 5])
+        end
+    end
+
+    context "given a large prime integer" do
+        it "returns an array with a single prime" do
+            expect(PrimeFactors.new.calculate_factors(37)).to eq([37])
         end
     end
 end
