@@ -36,4 +36,22 @@ RSpec.describe PrimeFactors do
             expect(PrimeFactors.new.calculate_factors(9)).to eq([3, 3])
         end
     end
+
+    context "given an integer with other prime factors" do
+        it "returns an array" do
+            expect(PrimeFactors.new.calculate_factors(15)).to eq([3, 5])
+        end
+    end
+
+    context "given an integer with other prime factors" do
+        it "returns an array" do
+            expect(PrimeFactors.new.calculate_factors(30)).to eq([2, 3, 5])
+        end
+    end
+
+    context "given an integer that is not square-free" do
+        it "returns an array" do
+            expect(PrimeFactors.new.calculate_factors(60)).to eq([2, 2, 3, 5])
+        end
+    end
 end
