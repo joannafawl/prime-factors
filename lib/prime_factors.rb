@@ -4,11 +4,7 @@ class PrimeFactors
         if integer == 1
             result << 1
         end
-        if integer % 2 == 0 
-            result << 2
-            integer /= 2
-        end
-        if integer % 2 == 0 
+        while integer % 2 == 0 
             result << 2
             integer /= 2
         end
